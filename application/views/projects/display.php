@@ -2,8 +2,34 @@
 
 <p class="bg-success">
 
+<?php if($this->session->flashdata('task_created')): ?>
+
+<?php echo $this->session->flashdata('task_created'); ?>
+
+<?php endif; ?>
+
+<?php if($this->session->flashdata('task_updated')): ?>
+
+<?php echo $this->session->flashdata('task_updated'); ?>
+
+<?php endif; ?>
+
+<?php if($this->session->flashdata('task_deleted')): ?>
+
+<?php echo $this->session->flashdata('task_deleted'); ?>
+
+<?php endif; ?>
+
 <?php if($this->session->flashdata('mark_done')): ?>
+
 <?php echo $this->session->flashdata('mark_done'); ?>
+
+<?php endif; ?>
+
+<?php if($this->session->flashdata('mark_done')): ?>
+
+<?php echo $this->session->flashdata('mark_done'); ?>
+
 <?php endif; ?>
 
 <?php if($this->session->flashdata('mark_undone')): ?>
@@ -96,6 +122,7 @@
 <ul class="list-group">
 		
 		<h4>Project Actions</h4>
+		<li class="list-group-item"><a href="<?php echo base_url();?>tasks/create/<?php echo $project_data->id; ?>">Create Task</a></li> 
 		<li class="list-group-item"><a href="<?php echo base_url();?>projects/edit/<?php echo $project_data->id; ?>">Edit Project</a></li> 
 		<li class="list-group-item"><a href="<?php echo base_url();?>projects/delete/<?php echo $project_data->id; ?>">Delete Project</a></li> 
 
